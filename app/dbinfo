@@ -1,0 +1,11 @@
+Pushing to database
+1) db.session.add()
+2) db.session.commit()
+
+
+flask db init
+flask db migrate -m " " (in our case it was users table)
+flask db upgrade
+
+flask db downgrade - is used when you accidentally
+mess up your database
