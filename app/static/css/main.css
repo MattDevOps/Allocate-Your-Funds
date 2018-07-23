@@ -1,3 +1,47 @@
 body {
-  background-color: blue;
+  overflow-x: hidden;
+}
+
+.center {
+  display: block;
+  margin: 20px auto;
+}
+
+.extra-margin {
+  margin: 30px 0px;
+}
+
+.pic_text {
+  padding-top: 35px;
+}
+
+figcaption {
+  text-align: center;
+}
+
+.btn-primary {
+  color: rgba(255,255,255, .5);
+  background-color: #343a40!important;
+  border-color: #343a40!important;
+}
+
+footer {
+  background-color: #343a40!important;
+  color: rgba(255,255,255,.5);
+  padding: 25px;
+}
+
+.form-control {
+  border-radius: 0px;
+}
+
+.card-subtitle {
+  font-style: italic;
+  padding-bottom: 15px;
+}
+
+.card {
+  margin: 25px;
+  padding: 10px;
+  box-shadow: 0px 0px 5px 0px grey;
 }
