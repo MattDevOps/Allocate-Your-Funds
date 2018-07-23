@@ -6,8 +6,8 @@
 <!-- to import Bootstrap3, need super() which inherits CDN from bootstrap base-->
   {{ super() }}
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 
 <!-- Latest compiled and minified JavaScript -->
   <link rel="stylesheet" href="..static/css/main.css">
@@ -18,21 +18,24 @@
  {% endblock %}
 
  {% block navbar %}
- <nav class="navbar navbar-expand-sm bg-light">
-     <ul class="nav navbar-nav">
-       <li>
+ <!-- A vertical navbar -->
+ <div class="container"
+ <nav class="navbar navbar-expand-sm bg-light navbar-light">
+      <ul class="nav navbar-nav">
+        <li class="nav-item active">
           <a>Retirement Planning</a>
         </li>
-     {% if current_user.is_authenticated %}
-   <p class="navbar-text pull-right"><a href="{{ url_for('logout') }}">Logout</a></p>
-   <p class="navbar-text pull-right"><a href="{{ url_for('profile') }}">Profile</a></p>
+      </ul>
+      {% if current_user.is_authenticated %}
+    <p class="navbar-text float-right"><a href="{{ url_for('logout') }}">Logout</a></p>
+    <p class="navbar-text float-right"><a href="{{ url_for('profile') }}">Profile</a></p>
 
-   {% else %}
-   <p class="navbar-text pull-right"><a href="{{ url_for('login') }}">Login</a></p>
-   <p class="navbar-text pull-right"><a href="{{ url_for('register') }}">Register</a></p>
-   {% endif %}
-   </ul>
- </nav>
+    {% else %}
+    <p class="navbar-text float-right"><a href="{{ url_for('login') }}">Login</a></p>
+    <p class="navbar-text float-right"><a href="{{ url_for('register') }}">Register</a></p>
+    {% endif %}
+  </nav>
+</div>
 
 {% endblock %}
 

@@ -3,11 +3,6 @@ from wtforms import StringField, PasswordField, BooleanField, SubmitField
 from wtforms.validators import DataRequired, EqualTo, Email, Length, ValidationError
 from app.models import User
 
-class UserInfo(FlaskForm):
-    Age = StringField('How old are you?', validators=[DataRequired()])
-    money = StringField('How much money did you make last month?', validators=[DataRequired()])
-    submit = SubmitField('Submit')
-
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
@@ -17,8 +12,9 @@ class LoginForm(FlaskForm):
 
 class RegistrationForm(FlaskForm):
     username = StringField('Username', validators=[Length(min=6, max=24), DataRequired()])
-    first_name = StringField('First Name', validators=[Length(min=6, max=24), DataRequired()])
-    last_name = StringField('Last Name', validators=[Length(min=6, max=24), DataRequired()])
+    full_name = StringField('Full Name', validators=[Length(min=4, max=34), DataRequired()])
+    Age = StringField('How old are you?', validators=[DataRequired()])
+    money = StringField('How much money did you make last month?', validators=[DataRequired()])
     email = StringField('Email Address', validators=[DataRequired(), Email()])
     password = PasswordField('Password', validators=[DataRequired()])
     password2 = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password', message='Passwords must match')])
