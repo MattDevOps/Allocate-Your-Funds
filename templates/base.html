@@ -1,0 +1,18 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block title %} {% endblock %}
+
+{% block styles %} {% endblock %}
+<!-- to import Bootstrap3, need super() which inherits CDN from bootstrap base-->
+  {{ super() }}
+  <link rel="stylesheet" href="..static/css/main.css">
+{% block scripts %}
+
+  {{ super() }}
+ {% endblock %}
+
+{% block navbar %}{% endblock %}
+
+{% block content %}
+  {% block app_content %}{% endblock %}
+{% endblock %}
