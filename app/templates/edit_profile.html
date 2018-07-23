@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+
+<div class="row">
+  <div class="col-md-4 ">
+    <img src="http://placehold.it/250x300" alt="Image">
+  </div>
+  <div class="col-md-5 ">
+    <h2>Hi {{ current_user.username }}!</h2>
+    <br></br>
+    <h4 class="bottom-bord">{{ current_user.email }}</h4>
+    <h5>To change your information, use the form below</h5>
+
+    {{ wtf.quick_form(form) }}
+
+  </div>
+</div>
+
+{% endblock %}
