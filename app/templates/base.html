@@ -7,18 +7,22 @@
   {{ super() }}
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
   <link rel="stylesheet" href="..static/css/main.css">
    {% endblock %}
-{% block scripts %}
 
+{% block scripts %}
   {{ super() }}
  {% endblock %}
 
  {% block navbar %}
- <div class="container">
-   <nav class="navbar navbar-expand-sm pull-right">
+ <nav class="navbar navbar-expand-sm bg-light">
      <ul class="nav navbar-nav">
-     </ul>
+       <li>
+          <a>Retirement Planning</a>
+        </li>
      {% if current_user.is_authenticated %}
    <p class="navbar-text pull-right"><a href="{{ url_for('logout') }}">Logout</a></p>
    <p class="navbar-text pull-right"><a href="{{ url_for('profile') }}">Profile</a></p>
@@ -27,7 +31,9 @@
    <p class="navbar-text pull-right"><a href="{{ url_for('login') }}">Login</a></p>
    <p class="navbar-text pull-right"><a href="{{ url_for('register') }}">Register</a></p>
    {% endif %}
+   </ul>
  </nav>
+
 {% endblock %}
 
 {% block content %}

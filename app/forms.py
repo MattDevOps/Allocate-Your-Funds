@@ -3,6 +3,11 @@ from wtforms import StringField, PasswordField, BooleanField, SubmitField
 from wtforms.validators import DataRequired, EqualTo, Email, Length, ValidationError
 from app.models import User
 
+class UserInfo(FlaskForm):
+    Age = StringField('How old are you?', validators=[DataRequired()])
+    money = StringField('How much money did you make last month?', validators=[DataRequired()])
+    submit = SubmitField('Submit')
+
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
