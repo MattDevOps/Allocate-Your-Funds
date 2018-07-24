@@ -21,12 +21,12 @@ class RegistrationForm(FlaskForm):
     submit = SubmitField('Submit')
 
     def validate_username(self, username):
-        user = User.query.filter_by(username=username.data).first_or_404()
+        user = User.query.filter_by(username=username.data).first()
         if user is not None:
             raise ValidationError('Username already taken.')
 
     def validate_email(self, email):
-        user = User.query.filter_by(email=email.data).first_or_404()
+        user = User.query.filter_by(email=email.data).first()
         if user is not None:
             raise ValidationError('Email already taken.')
 
@@ -36,11 +36,11 @@ class EditProfileForm(FlaskForm):
     submit = SubmitField('Submit')
 
     def validate_username(self, username):
-        user = User.query.filter_by(username=username.data).first_or_404()
+        user = User.query.filter_by(username=username.data).first()
         if user is not None:
             raise ValidationError('Username already taken.')
 
     def validate_email(self, email):
-        user = User.query.filter_by(email=email.data).first_or_404()
+        user = User.query.filter_by(email=email.data).first()
         if user is not None:
             raise ValidationError('Email already taken.')

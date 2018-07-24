@@ -38,8 +38,7 @@ def register():
         user = User(username=register_form.username.data, email=register_form.email.data, age=register_form.age.data, salary=register_form.salary.data)
 
         user.set_password(register_form.password.data)
-        user.set_salary(register_form.salary.data)
-        user.set_age(register_form.age.data)
+        user.five_percent(register_form.salary.data)
 
         db.session.add(user)
         db.session.commit()

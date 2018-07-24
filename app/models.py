@@ -11,11 +11,17 @@ class User(UserMixin, db.Model):
     age = db.Column(db.Integer)
     salary = db.Column(db.Integer)
 
-    def set_salary(self, salary):
-        return (salary * 0.05)
+    def bonds(self, age, salary):
+        pass
 
-    def set_age(self, age):
-        return age
+    def hold_cash(self, age, salary):
+        pass
+
+    def stocks(self, age, salary):
+        pass
+
+    def save_five_percent(self, salary):
+        return (salary * 0.05)
 
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
