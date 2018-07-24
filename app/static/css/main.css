@@ -61,10 +61,6 @@ footer {
   background-color: #silver;
 }
 
-.but:active {
-  box-shadow: none;
-  top: 5px;
-}
 
 input[type="submit"] {
   display: block;
