@@ -46,6 +46,22 @@ footer {
   box-shadow: 0px 0px 5px 0px grey;
 }
 
-.center {
-  text-align: center;
+.but {
+    background-color: white;
+  box-shadow: 0 5px 0 lightblue;
+  color: white;
+  padding: 1em 1.5em;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.but:hover {
+  background-color: #silver;
+  cursor: pointer;
+}
+
+.but:active {
+  box-shadow: none;
+  top: 5px;
 }
