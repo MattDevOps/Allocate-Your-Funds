@@ -4,12 +4,14 @@
 {% block title %} Register - {{ super() }} {% endblock %}
 
 {% block app_content %}
-<div class="row">
-  <div class="col-md-4 col-md-offset-4">
-    <h3>Registration Form</h3>
+<div class="container">
+<div class="row offset-md-3">
+  <div class="col-md-8">
+    <h3 class="offset-md-3 pic_text">Fill In Your Information</h3>
 
     {{ wtf.quick_form(form) }}
 
   </div>
+</div>
 </div>
 {% endblock %}
