@@ -10,15 +10,15 @@
    {% endblock %}
 
 {% block scripts %}
-  
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <!-- AJAX CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
  {% endblock %}
 
  {% block navbar %}
- <nav class="navbar navbar-expand-sm bg-dark navbar-light">
-      <ul class="nav navbar-nav">
+ <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+      <ul class="nav navbar-nav mr-auto">
         <li class="nav-item active">
           <a href="{{ url_for('index') }}">Retirement Planning</a>
         </li>
