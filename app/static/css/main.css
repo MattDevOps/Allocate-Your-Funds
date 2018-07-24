@@ -48,7 +48,7 @@ footer {
 }
 
 .but {
-    background-color: white;
+  color: white;
   box-shadow: 0 5px 0 lightblue;
   color: white;
   padding: 1em 1.5em;
@@ -59,7 +59,6 @@ footer {
 
 .but:hover {
   background-color: #silver;
-  cursor: pointer;
 }
 
 .but:active {
