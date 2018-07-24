@@ -1,5 +1,6 @@
 body {
   overflow-x: hidden;
+  font-family: Georgia;
 }
 
 .center {
@@ -70,4 +71,9 @@ input[type="submit"] {
   display: block;
   margin: 0px auto;
   width: 100%;
+}
+
+.bigfont {
+  font-weight: bold;
+  font-size: 40px;
 }

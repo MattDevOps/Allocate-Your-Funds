@@ -1,6 +1,6 @@
 {% extends 'bootstrap/base.html' %}
 
-{% block title %} Home {% endblock %}
+{% block title %} {% endblock %}
 
 {% block styles %}
 <!-- to import Bootstrap3, need super() which inherits CDN from bootstrap base-->
@@ -10,7 +10,7 @@
    {% endblock %}
 
 {% block scripts %}
-  {{ super() }}
+  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <!-- AJAX CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>

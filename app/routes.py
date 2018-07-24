@@ -24,7 +24,7 @@ def login():
         login_user(user, remember=login_form.remember_me.data)
         next_page = request.args.get('next')
         if not next_page or url_parse(next_page).netloc != '':
-            next_page = url_for('index')
+            next_page = url_for('results')
         flash('Thanks for logging in {}!'.format(current_user.username))
         return redirect(next_page)
     return render_template('login.html', form=login_form)
@@ -52,10 +52,10 @@ def logout():
 def profile():
     return render_template("profile.html", title='Profile')
 
-# 
-# @app.route('/results', methods=['GET', 'PUT'])
-# def results():
-#     return render_template("results.html", title='Results')
+
+@app.route('/results', methods=['GET', 'PUT'])
+def results():
+    return render_template("results.html", title='Results')
 
 
 @app.route('/edit_profile', methods=['GET', 'POST'])
