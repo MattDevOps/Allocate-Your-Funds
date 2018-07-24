@@ -65,3 +65,9 @@ footer {
   box-shadow: none;
   top: 5px;
 }
+
+input[type="submit"] {
+  display: block;
+  margin: 0px auto;
+  width: 100%;
+}
