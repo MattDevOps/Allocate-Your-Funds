@@ -40,7 +40,7 @@ def register():
         user.set_password(register_form.password.data)
         user.set_salary(register_form.salary.data)
         user.set_age(register_form.age.data)
-        
+
         db.session.add(user)
         db.session.commit()
         flash('Thanks for registering! You can now view your profile.')
