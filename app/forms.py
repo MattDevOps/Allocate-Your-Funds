@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, IntegerField
 from wtforms.validators import DataRequired, EqualTo, Email, Length, ValidationError
 from app.models import User
 
@@ -13,8 +13,8 @@ class LoginForm(FlaskForm):
 class RegistrationForm(FlaskForm):
     username = StringField('Username', validators=[Length(min=6, max=24), DataRequired()])
     full_name = StringField('Full Name', validators=[Length(min=4, max=34), DataRequired()])
-    Age = StringField('How old are you?', validators=[DataRequired()])
-    salary = StringField('What is your gross salary?', validators=[DataRequired()])
+    age = IntegerField('How old are you?', validators=[DataRequired()])
+    salary = IntegerField('What is your gross salary?', validators=[DataRequired()])
     email = StringField('Email Address', validators=[DataRequired(), Email()])
     password = PasswordField('Password', validators=[DataRequired()])
     password2 = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password', message='Passwords must match')])
