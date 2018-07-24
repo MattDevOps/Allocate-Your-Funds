@@ -20,7 +20,7 @@ class User(UserMixin, db.Model):
     def stocks(self, age, salary):
         pass
 
-    def save_five_percent(self, salary):
+    def five_percent(self, salary):
         return (salary * 0.05)
 
     def set_password(self, password):
