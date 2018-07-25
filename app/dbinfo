@@ -9,3 +9,7 @@ flask db upgrade
 
 flask db downgrade - is used when you accidentally
 mess up your database
+
+to do:
+1) prevent invalid user login
+2) display individual user results
