@@ -72,3 +72,20 @@ input[type="submit"] {
   font-weight: bold;
   font-size: 40px;
 }
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: white;
+}
+
+.retirement {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.signincolors {
+  color: white;
+}
