@@ -73,11 +73,11 @@ input[type="submit"] {
   font-size: 40px;
 }
 
-a {
+li>a {
   color: white;
 }
 
-a:hover {
+li> a:hover {
   color: white;
 }
 
