@@ -1,15 +1,21 @@
 from app import app, db
 from flask import render_template, redirect, url_for, flash, request
-from app.forms import LoginForm, RegistrationForm, EditProfileForm
+from app.forms import LoginForm, RegistrationForm, EditProfileForm, DoCalculations
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User
 from werkzeug.urls import url_parse
+from app.calculations import Calculations
+from flask import json
 
 
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/index')
 def index():
-    return render_template('index.html', title='Home Page')
+    form = DoCalculations()
+    calc = None
+    if form.validate_on_submit():
+        calc = Calculations(form.number1.data, form.number2.data)
+    return render_template('index.html', form=form, calc=calc, title='Home Page')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -72,3 +78,8 @@ def edit_profile():
         flash('Your changes have been saved.')
         return redirect(url_for('edit_profile'))
     return render_template('edit_profile.html', title='Edit Profile', form=form)
+
+@app.route('/api', methods = ['POST'])
+def api():
+  print(request.values.get('input', ''))
+  return request.values.get('input', '')
