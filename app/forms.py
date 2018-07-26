@@ -8,6 +8,11 @@ class LoginForm(FlaskForm):
     password = PasswordField('Password', validators=[DataRequired()])
     remember_me = BooleanField('Remember Me')
     submit = SubmitField('Submit')
+    #
+    # def check_for_invalid(self, username):
+    #     user = User.query.filter_by(username=username.data).first()
+    #     if user is None:
+    #         raise ValidationError('That username does exist.')
 
 
 class RegistrationForm(FlaskForm):

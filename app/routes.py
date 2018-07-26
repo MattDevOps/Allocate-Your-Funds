@@ -5,7 +5,6 @@ from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User
 from werkzeug.urls import url_parse
 from app.calculations import Calculations
-from flask import json
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -58,14 +57,6 @@ def profile():
     return render_template("profile.html", title='Profile')
 
 
-@app.route('/results', methods=['GET', 'POST'])
-def results():
-    form = ResultsForm()
-    calc = None
-    if form.validate_on_submit():
-        calc = Calculations(form.number1.data, form.number2.data)
-    return render_template('results.html', form=form, calc=calc, title='Home Page')
-
 @app.route('/edit_profile', methods=['GET', 'POST'])
 @login_required
 def edit_profile():
@@ -77,3 +68,11 @@ def edit_profile():
         flash('Your changes have been saved.')
         return redirect(url_for('edit_profile'))
     return render_template('edit_profile.html', title='Edit Profile', form=form)
+
+@app.route('/results', methods=['GET', 'POST'])
+def results():
+    form = ResultsForm()
+    calc = None
+    if form.validate_on_submit():
+        calc = Calculations(form.number1.data, form.number2.data)
+    return render_template('results.html', form=form, calc=calc, title='Results')
