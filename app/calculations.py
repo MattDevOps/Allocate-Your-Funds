@@ -7,4 +7,4 @@ class Calculations():
         return self.num1 + self.num2
 
     def returnString(self):
-        return 'This is a string, going to the index.html file'
+        return 'This is a string, going to the results.html file'

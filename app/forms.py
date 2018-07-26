@@ -45,7 +45,7 @@ class EditProfileForm(FlaskForm):
         if user is not None:
             raise ValidationError('Email already taken.')
 
-class DoCalculations(FlaskForm):
+class ResultsForm(FlaskForm):
     number1 = IntegerField('Number 1')
     number2 = IntegerField('Number 2')
     submit = SubmitField('Submit')
