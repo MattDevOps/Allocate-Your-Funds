@@ -11,15 +11,6 @@ class User(UserMixin, db.Model):
     age = db.Column(db.Integer)
     salary = db.Column(db.Integer)
 
-    def bonds(self, age, salary):
-        pass
-
-    def hold_cash(self, age, salary):
-        pass
-
-    def stocks(self, age, salary):
-        pass
-
     def five_percent(self, salary):
         return (salary * 0.05)
 
