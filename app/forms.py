@@ -44,8 +44,3 @@ class EditProfileForm(FlaskForm):
         user = User.query.filter_by(email=email.data).first()
         if user is not None:
             raise ValidationError('Email already taken.')
-
-class ResultsForm(FlaskForm):
-    age = IntegerField('How old are you?')
-    salary = IntegerField('Please enter your salary')
-    submit = SubmitField('Submit')

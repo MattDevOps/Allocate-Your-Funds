@@ -1,6 +1,6 @@
 from app import app, db
 from flask import render_template, redirect, url_for, flash, request
-from app.forms import LoginForm, RegistrationForm, EditProfileForm, ResultsForm
+from app.forms import LoginForm, RegistrationForm, EditProfileForm
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User
 from werkzeug.urls import url_parse
@@ -35,17 +35,20 @@ def register():
     if current_user.is_authenticated:
         return redirect(url_for('index'))
     register_form = RegistrationForm()
+    calc = None
     if register_form.validate_on_submit():
         user = User(username=register_form.username.data, email=register_form.email.data, age=register_form.age.data, salary=register_form.salary.data)
+        calc = Calculations(form.number1.data, form.number2.data)
+        return render_template('results.html', form=form, calc=calc, title='Results')
 
         user.set_password(register_form.password.data)
         user.five_percent(register_form.salary.data)
 
         db.session.add(user)
         db.session.commit()
-        flash('Thanks for registering! You can now view your profile.')
+        flash('Thanks for registering! You can now view your retirement info.')
         return redirect(url_for('login'))
-    return render_template('register.html', form=register_form)
+    return render_template('register.html', form=register_form, calc=calc)
 
 @app.route('/logout')
 def logout():
@@ -69,10 +72,10 @@ def edit_profile():
         return redirect(url_for('edit_profile'))
     return render_template('edit_profile.html', title='Edit Profile', form=form)
 
-@app.route('/results', methods=['GET', 'POST'])
-def results():
-    form = ResultsForm()
-    calc = None
-    if form.validate_on_submit():
-        calc = Calculations(form.number1.data, form.number2.data)
-    return render_template('results.html', form=form, calc=calc, title='Results')
+# @app.route('/results', methods=['GET', 'POST'])
+# def results():
+#      form = ResultsForm()
+#      calc = None
+#      if form.validate_on_submit():
+#          calc = Calculations(form.number1.data, form.number2.data)
+#          return render_template('results.html', form=form, calc=calc, title='Results')

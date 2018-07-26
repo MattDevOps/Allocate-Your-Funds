@@ -10,6 +10,9 @@
     <h3 class="offset-md-3 pic_text">Fill In Your Information</h3>
 
     {{ wtf.quick_form(form) }}
+   {% if calc != None %}
+    <h3>Result is: {{ calc.add() }}</h3>
+    {% endif %}
 
   </div>
 </div>
