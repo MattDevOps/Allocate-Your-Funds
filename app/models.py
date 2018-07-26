@@ -11,9 +11,6 @@ class User(UserMixin, db.Model):
     age = db.Column(db.Integer)
     salary = db.Column(db.Integer)
 
-    def five_percent(self, salary):
-        return (salary * 0.05)
-
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
 
