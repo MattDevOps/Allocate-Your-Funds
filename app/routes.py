@@ -58,7 +58,7 @@ def profile():
     return render_template("profile.html", title='Profile')
 
 
-@app.route('/results', methods=['GET', 'PUT'])
+@app.route('/results', methods=['GET', 'POST'])
 def results():
     form = ResultsForm()
     calc = None
