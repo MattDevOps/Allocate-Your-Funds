@@ -13,5 +13,5 @@ class Calculations():
         pass
 
     def five_percent(self):
-        print(self.salary)
-        return (self.salary * 0.05)
+        user_salary = (self.salary * 0.05)
+        return int(user_salary)
