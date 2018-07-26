@@ -35,10 +35,10 @@ def register():
     if current_user.is_authenticated:
         return redirect(url_for('index'))
     register_form = RegistrationForm()
-    calc = None
     if register_form.validate_on_submit():
         user = User(username=register_form.username.data, email=register_form.email.data, age=register_form.age.data, salary=register_form.salary.data)
-        calc = Calculations(register_form.salary.data, register_form.age.data)
+
+        calc = Calculations(register_form.age.data, register_form.salary.data)
 
         user.set_password(register_form.password.data)
 
@@ -46,7 +46,7 @@ def register():
         db.session.commit()
         flash('Thanks for registering! You can now view your retirement info.')
         return redirect(url_for('login'))
-    return render_template('register.html', form=register_form, calc=calc)
+    return render_template('register.html', form=register_form)
 
 @app.route('/logout')
 def logout():
@@ -70,6 +70,9 @@ def edit_profile():
         return redirect(url_for('edit_profile'))
     return render_template('edit_profile.html', title='Edit Profile', form=form)
 
+@login_required
 @app.route('/results', methods=['GET', 'POST'])
 def results():
-         return render_template('results.html', title='Results')
+
+    calc = Calculations(current_user.age, current_user.salary)
+    return render_template('results.html', calc=calc, title='Results')

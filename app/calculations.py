@@ -4,13 +4,14 @@ class Calculations():
         self.salary = salary
 
     def stocks(self):
-        return self.num1 + self.num2
+        pass
 
     def holdCash(self):
         return 'This is a string, going to the results.html file'
 
     def bonds(self):
-        return
+        pass
 
     def five_percent(self):
-        return salary * 0.05
+        print(self.salary)
+        return (self.salary * 0.05)
