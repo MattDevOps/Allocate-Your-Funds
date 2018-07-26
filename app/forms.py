@@ -8,11 +8,6 @@ class LoginForm(FlaskForm):
     password = PasswordField('Password', validators=[DataRequired()])
     remember_me = BooleanField('Remember Me')
     submit = SubmitField('Submit')
-    #
-    # def check_for_invalid(self, username):
-    #     user = User.query.filter_by(username=username.data).first()
-    #     if user is None:
-    #         raise ValidationError('That username does exist.')
 
 
 class RegistrationForm(FlaskForm):
@@ -51,6 +46,6 @@ class EditProfileForm(FlaskForm):
             raise ValidationError('Email already taken.')
 
 class ResultsForm(FlaskForm):
-    number1 = IntegerField('Number 1')
-    number2 = IntegerField('Number 2')
+    age = IntegerField('How old are you?')
+    salary = IntegerField('Please enter your salary')
     submit = SubmitField('Submit')
