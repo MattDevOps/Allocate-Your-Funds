@@ -93,3 +93,7 @@ a {
 a:hover {
   color: black;
 }
+
+h3>a:hover {
+  color: blue;
+}
