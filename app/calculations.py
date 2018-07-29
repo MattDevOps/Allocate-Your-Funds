@@ -4,7 +4,7 @@ class Calculations():
         self.salary = salary
 
     def stocks(self):
-        user_stock = (100 - self.age)
+        user_stock = (118 - self.age)
         return int(user_stock)
 
     def holdCash(self):
