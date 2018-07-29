@@ -73,6 +73,5 @@ def edit_profile():
 @login_required
 @app.route('/results', methods=['GET', 'POST'])
 def results():
-
     calc = Calculations(current_user.age, current_user.salary)
     return render_template('results.html', calc=calc, title='Results')

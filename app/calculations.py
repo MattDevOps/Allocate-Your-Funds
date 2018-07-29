@@ -4,7 +4,8 @@ class Calculations():
         self.salary = salary
 
     def stocks(self):
-        pass
+        user_stock = (100 - self.age)
+        return int(user_stock)
 
     def holdCash(self):
         return 'This is a string, going to the results.html file'
