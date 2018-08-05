@@ -101,3 +101,12 @@ h3>a:hover {
 .bottompad {
   padding-bottom: 30px;
 }
+
+footer {
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   height:70px;
+   width:100%;
+   z-index: 1;
+}
