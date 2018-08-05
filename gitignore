@@ -4,3 +4,4 @@
 __pycache__/
 app/__pycache__/
 local_settings.py
+venv
