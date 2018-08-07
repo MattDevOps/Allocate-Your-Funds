@@ -102,6 +102,32 @@ h3>a:hover {
   padding-bottom: 30px;
 }
 
+.top_pad {
+  padding-top: 150px;
+}
+
+table {
+  border: 2px solid steelblue;
+  width: 50%;
+  text-align: center;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+table tr th, table tr td {
+  border: 1px solid steelblue;
+  padding: 15px;
+}
+
+th {
+  color: steelblue;
+  font-weight: bold;
+}
+
+td:hover {
+  font-size: 200%;
+}
+
 footer {
    position:fixed;
    left:0px;
