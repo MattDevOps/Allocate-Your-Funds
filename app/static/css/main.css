@@ -116,7 +116,7 @@ table {
 
 table tr th, table tr td {
   border: 1px solid steelblue;
-  padding: 15px;
+  padding: 20px;
 }
 
 th {
@@ -124,8 +124,8 @@ th {
   font-weight: bold;
 }
 
-td:hover {
-  font-size: 200%;
+td {
+  font-size: 150%;
 }
 
 footer {
