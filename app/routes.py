@@ -36,16 +36,9 @@ def register():
         return redirect(url_for('index'))
     register_form = RegistrationForm()
     if register_form.validate_on_submit():
-        user = User.query.filter_by(username=register_form.username.data).first()
-        print("We are printing the username 89u983u89342ujiksdf89")
-        if user:
-            print(user.username)
-            flash('Username already taken')
-            return redirect(url_for('register'))
-        user = User(username=register_form.username.data, email=register_form.email.data, age=register_form.age.data, salary=register_form.salary.data)
+        user = User(username=register_form.username.data.lower(), email=register_form.email.data.lower(), age=register_form.age.data, salary=register_form.salary.data)
         calc = Calculations(register_form.age.data, register_form.salary.data)
         user.set_password(register_form.password.data)
-
         db.session.add(user)
         db.session.commit()
         flash('Thanks for registering! You can now view your retirement info.')
@@ -67,8 +60,8 @@ def profile():
 def edit_profile():
     form = EditProfileForm()
     if form.validate_on_submit():
-        current_user.username = form.username.data
-        current_user.email = form.email.data
+        current_user.username = form.username.data.lower()
+        current_user.email = form.email.data.lower()
         db.session.commit()
         flash('Your changes have been saved.')
         return redirect(url_for('edit_profile'))
