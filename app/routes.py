@@ -36,6 +36,10 @@ def register():
         return redirect(url_for('index'))
     register_form = RegistrationForm()
     if register_form.validate_on_submit():
+        user = User.query.filter_by(username=register_form.username.data.lower()).first()
+        if user:
+            register_form.username.errors.append('Username taken')
+            return redirect('register')
         user = User(username=register_form.username.data.lower(), email=register_form.email.data.lower(), age=register_form.age.data, salary=register_form.salary.data)
         calc = Calculations(register_form.age.data, register_form.salary.data)
         user.set_password(register_form.password.data)

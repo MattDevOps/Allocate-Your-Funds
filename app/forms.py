@@ -35,20 +35,23 @@ class RegistrationForm(FlaskForm):
     def validate_email(self, email):
         user = User.query.filter_by(email=email.data).first()
         if user is not None:
+            flash('Email already in use')
             raise ValidationError('Email already taken.')
 
 
 class EditProfileForm(FlaskForm):
-    username = StringField('Username', validators=[DataRequired()])
-    email = StringField('Email Address', validators=[DataRequired(), Email()])
+    username = StringField('Username')
+    email = StringField('Email Address', validators=[Email()])
     submit = SubmitField('Submit')
 
     def validate_username(self, username):
         user = User.query.filter_by(username=username.data).first()
         if user is not None:
+            flash('Username taken')
             raise ValidationError('Username already taken.')
 
     def validate_email(self, email):
         user = User.query.filter_by(email=email.data).first()
         if user is not None:
+            flash('Email already in use')
             raise ValidationError('Email already taken.')
