@@ -1,17 +1,41 @@
 {% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
 
 {% block title %} Your Unique Results {% endblock %}
 
 {% block app_content %}
 
-<div class="row">
-  <div class="col-md-8 ">
-    <p> Placeholder</p>
-    <br>Put (x) amount into stocks
-    <br>Save (x amount of gross pay) -- (calculate the number for user's salary and return 5%)
-    <br>Put (x) amount into bonds
-    <br>Hold (x) amount in cash
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h3 class="offset-md-2 pic_text">Your Personalized Results</h3>
+      <table style="width:100%">
+        <tr>
 
+          <th>Your Age</th>
+          <th>Your Salary</th>
+        </tr>
+          <tr>
+            {% if calc %}
+          <td>{{ calc.get_age() }}</td>
+          <td>${{ calc.get_salary() }}</td>
+            {% endif %}
+        </tr>
+        </table>
+      {% if calc %}
+
+      <br><h4>Based on your age, you should invest {{ calc.stocks() }}% of your portfolio in stocks</h4>
+
+      {% endif %}
+      <br><h4>Save (x amount of gross pay) -- (calculate the number for user's salary and return 5%)<h4>
+      <br><h4>Put (x) amount into bonds<h4>
+      <br><h4>Hold (x) amount in cash</h4>
+
+      {% if calc %}
+        <h4>You should save: ${{ calc.five_percent() }} worth of your salary</h4>
+      {% endif %}
+
+    </div>
   </div>
 </div>
 

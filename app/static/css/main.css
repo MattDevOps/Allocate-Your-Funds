@@ -1,6 +1,8 @@
 body {
   overflow-x: hidden;
   font-family: Georgia;
+  background-image: url("/static/img/wallpaper2you_104128.jpg");
+}
 }
 
 .center {
@@ -14,6 +16,10 @@ body {
 
 .pic_text {
   padding-top: 35px;
+}
+
+.white-text {
+  color: white;
 }
 
 figcaption {
@@ -88,4 +94,51 @@ li> a:hover {
 
 .signincolors {
   color: black;
+<<<<<<< HEAD
+=======
+}
+
+a:hover {
+   color: black;
+ }
+
+h3>a:hover {
+  color: blue;
+}
+
+.bottompad {
+  padding-bottom: 30px;
+}
+
+.top_pad {
+  padding-top: 150px;
+}
+
+table {
+  border: 2px solid steelblue;
+  width: 50%;
+  text-align: center;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+table tr th, table tr td {
+  border: 1px solid steelblue;
+  padding: 20px;
+}
+
+th {
+  color: steelblue;
+  font-weight: bold;
+}
+
+td {
+  font-size: 150%;
+}
+
+footer {
+   width:100%;
+   z-index: 1;
+   margin-top: 50px;
+>>>>>>> Adding_Calculations
 }

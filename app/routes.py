@@ -4,6 +4,7 @@ from app.forms import LoginForm, RegistrationForm, EditProfileForm
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User
 from werkzeug.urls import url_parse
+from app.calculations import Calculations
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -35,14 +36,19 @@ def register():
         return redirect(url_for('index'))
     register_form = RegistrationForm()
     if register_form.validate_on_submit():
+        user = User.query.filter_by(username=register_form.username.data).first()
+        print("We are printing the username 89u983u89342ujiksdf89")
+        if user:
+            print(user.username)
+            flash('Username already taken')
+            return redirect(url_for('register'))
         user = User(username=register_form.username.data, email=register_form.email.data, age=register_form.age.data, salary=register_form.salary.data)
-
+        calc = Calculations(register_form.age.data, register_form.salary.data)
         user.set_password(register_form.password.data)
-        user.five_percent(register_form.salary.data)
 
         db.session.add(user)
         db.session.commit()
-        flash('Thanks for registering! You can now view your profile.')
+        flash('Thanks for registering! You can now view your retirement info.')
         return redirect(url_for('login'))
     return render_template('register.html', form=register_form)
 
@@ -56,11 +62,6 @@ def profile():
     return render_template("profile.html", title='Profile')
 
 
-@app.route('/results', methods=['GET', 'PUT'])
-def results():
-    return render_template("results.html", title='Results')
-
-
 @app.route('/edit_profile', methods=['GET', 'POST'])
 @login_required
 def edit_profile():
@@ -72,3 +73,9 @@ def edit_profile():
         flash('Your changes have been saved.')
         return redirect(url_for('edit_profile'))
     return render_template('edit_profile.html', title='Edit Profile', form=form)
+
+@login_required
+@app.route('/results', methods=['GET', 'POST'])
+def results():
+    calc = Calculations(current_user.age, current_user.salary)
+    return render_template('results.html', calc=calc, title='Results')
