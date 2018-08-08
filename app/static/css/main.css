@@ -112,6 +112,10 @@ h3>a:hover {
   padding-bottom: 30px;
 }
 
+.more-bottom-pad {
+  padding-bottom: 310px;
+}
+
 .top_pad {
   padding-top: 150px;
 }
