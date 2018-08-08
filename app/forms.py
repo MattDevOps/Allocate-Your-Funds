@@ -40,8 +40,8 @@ class RegistrationForm(FlaskForm):
 
 
 class EditProfileForm(FlaskForm):
-    username = StringField('Username')
-    email = StringField('Email Address', validators=[Email()])
+    username = StringField('Username', validators=[DataRequired()])
+    email = StringField('Email Address', validators=[DataRequired(), Email()])
     submit = SubmitField('Submit')
 
     def validate_username(self, username):
@@ -53,5 +53,5 @@ class EditProfileForm(FlaskForm):
     def validate_email(self, email):
         user = User.query.filter_by(email=email.data).first()
         if user is not None:
-            flash('Email already in use')
+            flash('Email already taken')
             raise ValidationError('Email already taken.')
