@@ -133,9 +133,18 @@ table tr th, table tr td {
   padding: 20px;
 }
 
+td:hover {
+  font-size: 40px;
+  color: green;
+}
+
 th {
   color: white;
   font-weight: bold;
+}
+
+th:hover {
+  color: black;
 }
 
 td {
