@@ -1,6 +1,8 @@
 body {
   overflow-x: hidden;
   font-family: Georgia;
+  background-image: url("/static/img/wallpaper2you_104128.jpg");
+}
 }
 
 .center {
