@@ -11,10 +11,10 @@ flask db downgrade - is used when you accidentally
 mess up your database
 
 to do:
-<<<<<<< HEAD
+
 1) prevent invalid user login
 2) display individual user results
-=======
+
 1) put user results into a table
 2) adjust footer
->>>>>>> Adding_Calculations
+3) add js file with animation after user registers

@@ -94,8 +94,6 @@ li> a:hover {
 
 .signincolors {
   color: black;
-<<<<<<< HEAD
-=======
 }
 
 a:hover {
@@ -136,9 +134,15 @@ td {
   font-size: 150%;
 }
 
+label[for=username], label[for=full_name], label[for=age],
+label[for=salary],  label[for=email],
+label[for=password],  label[for=password2]
+{
+  color: white;
+}
+
 footer {
    width:100%;
    z-index: 1;
    margin-top: 50px;
->>>>>>> Adding_Calculations
 }
