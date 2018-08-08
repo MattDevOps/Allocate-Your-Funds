@@ -12,7 +12,7 @@ class LoginForm(FlaskForm):
 
 class RegistrationForm(FlaskForm):
     username = StringField('Username', validators=[Length(min=6, max=24), DataRequired()])
-    full_name = StringField('Full Name', validators=[Length(min=4, max=34), DataRequired()])
+    full_name = StringField('Full Name', validators=[Length(min=1, max=34), DataRequired()])
     age = IntegerField('How old are you?', validators=[DataRequired()])
     salary = IntegerField('What is your gross salary?', validators=[DataRequired()])
     email = StringField('Email Address', validators=[DataRequired(), Email()])
