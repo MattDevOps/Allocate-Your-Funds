@@ -11,6 +11,16 @@ class User(UserMixin, db.Model):
     age = db.Column(db.Integer)
     salary = db.Column(db.Integer)
 
+    def validate_username(self, username):
+        user = User.query.filter_by(username=username.data).first()
+        if user is not None:
+            raise ValidationError('Username already taken.')
+
+    def validate_email(self, email):
+        user = User.query.filter_by(email=email.data).first()
+        if user is not None:
+            raise ValidationError('Email already taken.')
+
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
 

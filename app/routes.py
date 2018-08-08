@@ -36,10 +36,14 @@ def register():
         return redirect(url_for('index'))
     register_form = RegistrationForm()
     if register_form.validate_on_submit():
+        user = User.query.filter_by(username=register_form.username.data).first()
+        print("We are printing the username 89u983u89342ujiksdf89")
+        if user:
+            print(user.username)
+            flash('Username already taken')
+            return redirect(url_for('register'))
         user = User(username=register_form.username.data, email=register_form.email.data, age=register_form.age.data, salary=register_form.salary.data)
-
         calc = Calculations(register_form.age.data, register_form.salary.data)
-
         user.set_password(register_form.password.data)
 
         db.session.add(user)
