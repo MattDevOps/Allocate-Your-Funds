@@ -87,6 +87,10 @@ li> a:hover {
   color: white;
 }
 
+a {
+  color: white;
+}
+
 .retirement {
   font-size: 30px;
   font-weight: bold;
