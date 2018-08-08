@@ -18,6 +18,10 @@ body {
   padding-top: 35px;
 }
 
+.white-text {
+  color: white;
+}
+
 figcaption {
   text-align: center;
 }
