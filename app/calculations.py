@@ -18,9 +18,7 @@ class Calculations():
         return int(user_salary)
 
     def get_age(self):
-        user_age = (0 + self.age)
-        return int(user_age)
+        return self.age
 
     def get_salary(self):
-        user_salary = (0 + self.salary)
-        return int(user_salary)
+        return self.salary
