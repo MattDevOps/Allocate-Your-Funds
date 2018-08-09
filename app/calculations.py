@@ -2,13 +2,11 @@ class Calculations():
     def __init__(self, age, salary):
         self.age = age
         self.salary = salary
+        self.risk = risk
 
     def stocks(self):
         user_stock = (118 - self.age)
         return int(user_stock)
-
-    def holdCash(self):
-        return 'This is a string, going to the results.html file'
 
     def bonds(self):
         pass
@@ -22,3 +20,6 @@ class Calculations():
 
     def get_salary(self):
         return self.salary
+
+    def get_risk(self):
+        pass

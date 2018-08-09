@@ -40,7 +40,9 @@ def register():
         if user:
             register_form.username.errors.append('Username taken')
             return redirect('register')
-        user = User(username=register_form.username.data.lower(), email=register_form.email.data.lower(), age=register_form.age.data, salary=register_form.salary.data)
+        user = User(username=register_form.username.data.lower(), email=register_form.email.data.lower(),
+        age=register_form.age.data, salary=register_form.salary.data, risk=register_form.risk.data)
+
         calc = Calculations(register_form.age.data, register_form.salary.data)
         user.set_password(register_form.password.data)
         db.session.add(user)
@@ -74,5 +76,5 @@ def edit_profile():
 @login_required
 @app.route('/results', methods=['GET', 'POST'])
 def results():
-    calc = Calculations(current_user.age, current_user.salary)
+    calc = Calculations(current_user.age, current_user.salary, current_user.risk)
     return render_template('results.html', calc=calc, title='Results')
