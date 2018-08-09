@@ -1,5 +1,5 @@
 class Calculations():
-    def __init__(self, age, salary):
+    def __init__(self, age, salary, risk):
         self.age = age
         self.salary = salary
         self.risk = risk
@@ -26,7 +26,7 @@ class Calculations():
         return self.salary
 
     def get_risk(self):
-        if age == 'yes' or 'Yes':
-            stocks_yes()
+        if self.age == 'yes' or 'Yes':
+            Calculations.stocks_yes(self)
         else:
-            stocks_no()
+            Calculations.stocks_no(self)
