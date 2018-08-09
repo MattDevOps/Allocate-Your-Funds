@@ -27,6 +27,6 @@ class Calculations():
 
     def get_risk(self):
         if self.age == 'yes' or 'Yes':
-            Calculations.stocks_yes(self)
+            return Calculations.stocks_yes(self)
         else:
-            Calculations.stocks_no(self)
+            return Calculations.stocks_no(self)
