@@ -66,11 +66,12 @@ def profile():
 def edit_profile():
     form = EditProfileForm()
     if form.validate_on_submit():
-        current_user.username = form.username.data.lower()
-        current_user.email = form.email.data.lower()
+        current_user.age = form.age.data
+        current_user.salary = form.salary.data
+        current_user.risk = form.risk.data
         db.session.commit()
         flash('Your changes have been saved.')
-        return redirect(url_for('edit_profile'))
+        return redirect(url_for('profile'))
     return render_template('edit_profile.html', title='Edit Profile', form=form)
 
 @login_required

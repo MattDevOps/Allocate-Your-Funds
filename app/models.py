@@ -10,7 +10,7 @@ class User(UserMixin, db.Model):
     password_hash = db.Column(db.String(256))
     age = db.Column(db.Integer)
     salary = db.Column(db.Integer)
-    risk = db.Column(db.String(120), index=True, unique=False)
+    risk = db.Column(db.String(120), index=True)
 
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
