@@ -21,6 +21,7 @@ class RegistrationForm(FlaskForm):
     full_name = StringField('Full Name', validators=[Length(min=1, max=34), DataRequired()])
     age = IntegerField('How old are you?', validators=[DataRequired()])
     salary = IntegerField('What is your gross salary?', validators=[DataRequired()])
+    risk = StringField('Would you consider yourself a risky person?', validators=[DataRequired(), ])
     email = StringField('Email Address', validators=[DataRequired(), Email()])
     password = PasswordField('Password', validators=[DataRequired()])
     password2 = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password', message='Passwords must match')])
