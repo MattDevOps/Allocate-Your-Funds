@@ -24,7 +24,7 @@
         </table>
       {% if calc %}
 
-      <br><h4>Based on your age, you should invest {{ calc.stocks() }}% of your portfolio in stocks</h4>
+      <br><h4>Based on your age, you should invest {{ calc.get_risk() }}% of your portfolio in stocks</h4>
 
       {% endif %}
       <br><h4>Put (x) amount into bonds (if user does is not risky, do not put money into bonds.)

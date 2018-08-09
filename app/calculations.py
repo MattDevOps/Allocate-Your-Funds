@@ -4,8 +4,12 @@ class Calculations():
         self.salary = salary
         self.risk = risk
 
-    def stocks(self):
+    def stocks_yes(self):
         user_stock = (118 - self.age)
+        return int(user_stock)
+
+    def stocks_no(self):
+        user_stock = (98 - self.age)
         return int(user_stock)
 
     def bonds(self):
@@ -22,4 +26,7 @@ class Calculations():
         return self.salary
 
     def get_risk(self):
-        pass
+        if age == 'yes' or 'Yes':
+            stocks_yes()
+        else:
+            stocks_no()
