@@ -27,7 +27,10 @@
       <br><h4>Based on your age, you should invest {{ calc.stocks() }}% of your portfolio in stocks</h4>
 
       {% endif %}
-      <br><h4>Put (x) amount into bonds<h4>
+      <br><h4>Put (x) amount into bonds (if user does is not risky, do not put money into bonds.)
+          <img class="center" src="https://raw.githubusercontent.com/mattstermh93/Allocate-Your-Funds/master/app/static/img/10-year-bond.png" alt="Image" width="100%">
+          As you can see, the returns on 10 year bond yields has decreased significantly in the last 35 years
+        <h4>
       <br><h4>Hold (x) amount in cash</h4>
 
       {% if calc %}
