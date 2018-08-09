@@ -8,8 +8,4 @@ Jinja2
 HTML
 CSS
 Python
-<<<<<<< HEAD
 jQuery
-=======
-jQuery
->>>>>>> ececa1db3806dd858ec8e7a959516fc05b357387
