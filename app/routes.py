@@ -43,7 +43,7 @@ def register():
         user = User(username=register_form.username.data.lower(), email=register_form.email.data.lower(),
         age=register_form.age.data, salary=register_form.salary.data, risk=register_form.risk.data)
 
-        calc = Calculations(register_form.age.data, register_form.salary.data)
+        calc = Calculations(register_form.age.data, register_form.salary.data, register_form.risk.data)
         user.set_password(register_form.password.data)
         db.session.add(user)
         db.session.commit()
