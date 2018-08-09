@@ -5,5 +5,7 @@ The body of this work includes:
 SQL DB
 Flask
 Jinja2
-HTML/CSS
+HTML
+CSS
 Python
+jQuery
