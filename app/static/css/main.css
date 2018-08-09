@@ -133,7 +133,11 @@ table tr th, table tr td {
 }
 
 td:hover {
-  font-size: 40px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.green:hover {
   color: green;
 }
 

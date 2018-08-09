@@ -18,7 +18,7 @@
           <tr>
             {% if calc %}
           <td>{{ calc.get_age() }}</td>
-          <td>${{ calc.get_salary() }}</td>
+          <td class="green">${{ calc.get_salary() }}</td>
             {% endif %}
         </tr>
         </table>
@@ -31,10 +31,9 @@
           <img class="center" src="https://raw.githubusercontent.com/mattstermh93/Allocate-Your-Funds/master/app/static/img/10-year-bond.png" alt="Image" width="100%">
           As you can see, the returns on 10 year bond yields has decreased significantly in the last 35 years
         <h4>
-      <br><h4>Hold (x) amount in cash</h4>
 
       {% if calc %}
-        <h4>You should save: ${{ calc.five_percent() }} worth of your salary</h4>
+        <h4>You should save: ${{ calc.five_percent() }} worth of your salary and hold it in cash each year</h4>
       {% endif %}
 
     </div>
