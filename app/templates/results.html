@@ -11,30 +11,21 @@
       <h3 class="offset-md-2 pic_text white-text">Your Personalized Results</h3>
       <table style="width:100%">
         <tr>
-
-          <th>Your Age</th>
-          <th>Your Salary</th>
-        </tr>
+          {% if calc %}
+          <th>Age: {{ calc.get_age() }}</th>
+          <th class="green">Salary: ${{ calc.get_salary() }} </th>
+          </tr>
           <tr>
-            {% if calc %}
-          <td>{{ calc.get_age() }}</td>
-          <td class="green">${{ calc.get_salary() }}</td>
-            {% endif %}
+            <td>Based on your age and risk level, you should invest {{ calc.get_risk() }}% of your portfolio in stocks</td>
+            <td>You should save: ${{ calc.five_percent() }} in cash each year with your current salary</td>
+          {% endif %}
         </tr>
         </table>
-      {% if calc %}
-      {% if calc %}
-        <h4>You should save: ${{ calc.five_percent() }} worth of your salary and hold it in cash each year</h4>
-      {% endif %}
-      <br><h4>Based on your age, you should invest {{ calc.get_risk() }}% of your portfolio in stocks</h4>
 
-      {% endif %}
       <br><h4>Put (x) amount into bonds (if user does is not risky, do not put money into bonds.)
           <img class="center" src="https://raw.githubusercontent.com/mattstermh93/Allocate-Your-Funds/master/app/static/img/10-year-bond.png" alt="Image" width="100%">
           As you can see, the returns on 10 year bond yields has decreased significantly in the last 35 years
         <h4>
-
-
 
     </div>
   </div>
