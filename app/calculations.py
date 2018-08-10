@@ -73,6 +73,9 @@ class Calculations():
         elif len(str_salary) == 9:
             return '${:9,.2f}'.format(self.salary)
 
+    def is_risky(self):
+        return self.risk
+
     def get_risk(self):
         if self.age == 'yes' or 'Yes':
             return Calculations.stocks_yes(self)
