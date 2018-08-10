@@ -40,7 +40,7 @@ class Calculations():
         elif len(str_user_stock) == 9:
             return '${:9,.2f}'.format(user_stock)
         else:
-            return '$' + ' ' + user_stock
+            return '$' + '' + str(user_stock)
 
     def bonds(self):
         pass
@@ -64,9 +64,11 @@ class Calculations():
         else:
             return '$' + '' + str(user_salary)
 
+    #displayed in table header
     def get_age(self):
         return self.age
 
+    #displayed in table header
     def get_salary(self):
         str_salary = str(self.salary)
         if len(str_salary) == 4:
@@ -82,12 +84,13 @@ class Calculations():
         elif len(str_salary) == 9:
             return '${:9,.2f}'.format(self.salary)
         else:
-            return '$' + ' ' + self.salary
+            return '$' + '' + self.salary
 
-    #used for table header
+    #displayed in table header
     def is_risky(self):
         return self.risk
 
+    #determines how much we recommend the user invest in stocks
     def get_risk(self):
         if self.age == 'yes' or 'Yes':
             return Calculations.stocks_yes(self)
