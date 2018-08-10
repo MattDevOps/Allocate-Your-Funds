@@ -1,3 +1,6 @@
+import locale
+locale.setlocale( locale.LC_ALL, '' )
+
 class Calculations():
     def __init__(self, age, salary, risk):
         self.age = age
@@ -7,40 +10,12 @@ class Calculations():
     #method is called if user is risky
     def stocks_yes(self):
         user_stock = (120 - self.age)
-        str_user_stock = str(user_stock)
-        if len(str_user_stock) == 4:
-            return '${:4,.2f}'.format(user_stock)
-        elif len(str_user_stock) == 5:
-            return '${:5,.2f}'.format(user_stock)
-        elif len(str_user_stock) == 6:
-            return '${:6,.2f}'.format(user_stock)
-        elif len(str_user_stock) == 7:
-            return '${:7,.2f}'.format(user_stock)
-        elif len(str_user_stock) == 8:
-            return '${:8,.2f}'.format(user_stock)
-        elif len(str_user_stock) == 9:
-            return '${:9,.2f}'.format(user_stock)
-        else:
-            return '$' + '' + str(user_stock)
+        return locale.currency(user_stock, grouping=True)
 
     #method is called if user is risk averse
     def stocks_no(self):
         user_stock = (98 - self.age)
-        str_user_stock = str(user_stock)
-        if len(str_user_stock) == 4:
-            return '${:4,.2f}'.format(user_stock)
-        elif len(str_user_stock) == 5:
-            return '${:5,.2f}'.format(user_stock)
-        elif len(str_user_stock) == 6:
-            return '${:6,.2f}'.format(user_stock)
-        elif len(str_user_stock) == 7:
-            return '${:7,.2f}'.format(user_stock)
-        elif len(str_user_stock) == 8:
-            return '${:8,.2f}'.format(user_stock)
-        elif len(str_user_stock) == 9:
-            return '${:9,.2f}'.format(user_stock)
-        else:
-            return '$' + '' + str(user_stock)
+        return locale.currency(user_stock, grouping=True)
 
     def bonds(self):
         pass
@@ -48,21 +23,7 @@ class Calculations():
     #calculates how much $ the user should hold
     def five_percent(self):
         user_salary = (self.salary * 0.05)
-        str_user_salary = str(user_salary)
-        if len(str_user_salary) == 4:
-            return '${:4,.2f}'.format(user_salary)
-        elif len(str_user_salary) == 5:
-            return '${:5,.2f}'.format(user_salary)
-        elif len(str_user_salary) == 6:
-            return '${:6,.2f}'.format(user_salary)
-        elif len(str_user_salary) == 7:
-            return '${:7,.2f}'.format(user_salary)
-        elif len(str_user_salary) == 8:
-            return '${:8,.2f}'.format(user_salary)
-        elif len(str_user_salary) == 9:
-            return '${:9,.2f}'.format(user_salary)
-        else:
-            return '$' + '' + str(user_salary)
+        return locale.currency(user_salary, grouping=True)
 
     #displayed in table header
     def get_age(self):
@@ -70,21 +31,7 @@ class Calculations():
 
     #displayed in table header
     def get_salary(self):
-        str_salary = str(self.salary)
-        if len(str_salary) == 4:
-            return '${:4,.2f}'.format(self.salary)
-        elif len(str_salary) == 5:
-            return '${:5,.2f}'.format(self.salary)
-        elif len(str_salary) == 6:
-            return '${:6,.2f}'.format(self.salary)
-        elif len(str_salary) == 7:
-            return '${:7,.2f}'.format(self.salary)
-        elif len(str_salary) == 8:
-            return '${:8,.2f}'.format(self.salary)
-        elif len(str_salary) == 9:
-            return '${:9,.2f}'.format(self.salary)
-        else:
-            return '$' + '' + self.salary
+        return locale.currency(self.salary, grouping=True)
 
     #displayed in table header
     def is_risky(self):
