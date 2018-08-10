@@ -136,7 +136,11 @@ table tr th, table tr td {
 tr { display: block; }
 
 .green:hover {
-  color: green;
+  color: lightgreen;
+}
+
+.risk:hover {
+  color: red;
 }
 
 th {

@@ -17,9 +17,6 @@ class Calculations():
         user_stock = (98 - self.age)
         return locale.currency(user_stock, grouping=True)
 
-    def bonds(self):
-        pass
-
     #calculates how much $ the user should hold
     def five_percent(self):
         user_salary = (self.salary * 0.05)

@@ -13,7 +13,7 @@
     <h4 class="bottom-bord">{{ current_user.email }}</h4>
     <h5>To change your information, use the form below</h5>
 
-    {{ wtf.quick_form(form) }}
+    {{ wtf.quick_form(form,button_map={'submit':'success'}) }}
 
   </div>
 </div>

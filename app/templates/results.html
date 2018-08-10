@@ -14,7 +14,7 @@
           {% if calc %}
           <th>Age: {{ calc.get_age() }}</th>
           <th class="green">Salary: {{ calc.get_salary() }} </th>
-          <th> Willing to Risk: {{ calc.is_risky().title() }} </th>
+          <th class="risk"> Willing to Risk: {{ calc.is_risky().title() }} </th>
           </tr>
           <tr>
             <td>Based on your age and risk level, you should invest {{ calc.get_risk() }}% of your portfolio in stocks<br>
@@ -23,10 +23,9 @@
           {% endif %}
         </tr>
         </table>
-
-      <br><h4>Put (x) amount into bonds (if user does is not risky, do not put money into bonds.)
           <img class="center" src="https://raw.githubusercontent.com/mattstermh93/Allocate-Your-Funds/master/app/static/img/10-year-bond.png" alt="Image" width="100%">
-          As you can see, the returns on 10 year bond yields has decreased significantly in the last 35 years
+          As you can see, the returns on 10 year bond yields has decreased significantly in the last 35 years. <br>
+          For this reason, we do not advise
         <h4>
 
     </div>
