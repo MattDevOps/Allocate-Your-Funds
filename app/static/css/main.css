@@ -156,6 +156,11 @@ td {
   font-size: 150%;
 }
 
+.steelbluetext {
+  color: steelblue;
+  font-weight: bold;
+}
+
 label[for=username], label[for=full_name], label[for=age],
 label[for=salary],  label[for=email], label[for=risk],
 label[for=password],  label[for=password2]
