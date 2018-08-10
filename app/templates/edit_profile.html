@@ -1,6 +1,14 @@
 {% extends 'base.html' %}
 {% import 'bootstrap/wtf.html' as wtf %}
 
+{% block title %} Edit Profile {% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="../static/js/edit.js"></script>
+{% endblock %}
+
 {% block app_content %}
 
 <div class="row">
