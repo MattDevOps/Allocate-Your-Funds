@@ -17,8 +17,8 @@
           <th class="risk"> Willing to Risk: {{ calc.is_risky().title() }} </th>
           </tr>
           <tr>
-            <td>Based on your age and risk level, you should invest {{ calc.get_risk() }}% of your portfolio in stocks<br>
-            In other words (total number in $dollars)</td>
+            <td>Based on your age and risk level, you should invest {{ calc.get_risk() }}% of your portfolio in stocks
+            </td>
             <td>You should save: {{ calc.five_percent() }} in cash each year with your current salary</td>
           {% endif %}
         </tr>
