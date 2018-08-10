@@ -1,23 +1,26 @@
+import locale
+
+
 class Calculations():
     def __init__(self, age, salary, risk):
         self.age = age
-        self.salary = salary
+        self.salary = float(salary)
         self.risk = risk
 
     def stocks_yes(self):
         user_stock = (118 - self.age)
-        return int(user_stock)
+        return float(user_stock)
 
     def stocks_no(self):
         user_stock = (98 - self.age)
-        return int(user_stock)
+        return float(user_stock)
 
     def bonds(self):
         pass
 
     def five_percent(self):
         user_salary = (self.salary * 0.05)
-        return int(user_salary)
+        return float(user_salary)
 
     def get_age(self):
         return self.age
