@@ -5,23 +5,18 @@
 {% block app_content %}
 
 <div class="row">
-  <div class="col-md-4 ">
-    <img src="https://images.vexels.com/media/users/3/143372/isolated/preview/6e633a235ea0d523078e667b9f84f15b-blue-check-mark-by-vexels.png" width="100%" alt="Image">
+  <div class="col-md-4">
+    <img src="https://images.vexels.com/media/users/3/143372/isolated/preview/6e633a235ea0d523078e667b9f84f15b-blue-check-mark-by-vexels.png" width="80%" height="80%"  alt="Image">
   </div>
-    <div class="col-md-4">
+    <div class="col-md-4 offset-md-1">
       <h2 class="steelbluetext">Hi {{ current_user.username }}!</h2>
       <br></br>
       <h4>{{ current_user.email }}</h4>
       <h4 class="pull-right"><a href="/edit_profile">Edit Profile</a>
-
         <br></br>
-
     <h3><a href="{{ url_for('results') }}">Click here to view your results</a></h3>
+  </div>
 
-  </div>
-    <div class="container center col-md-4 md-offset-5">
-      <img src="https://images.vexels.com/media/users/3/143372/isolated/preview/6e633a235ea0d523078e667b9f84f15b-blue-check-mark-by-vexels.png" width="100%" alt="Image">
-  </div>
 </div>
 
 {% endblock %}

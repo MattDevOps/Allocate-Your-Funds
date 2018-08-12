@@ -14,7 +14,7 @@ class Calculations():
 
     #method is called if user is risk averse
     def stocks_no(self):
-        user_stock = (98 - self.age)
+        user_stock = (90 - self.age)
         return user_stock
 
     #calculates how much $ the user should hold
@@ -37,6 +37,6 @@ class Calculations():
     #determines how much we recommend the user invest in stocks
     def get_risk(self):
         if self.risk == 'yes' or 'Yes':
-            return Calculations.stocks_yes(self)
+            return self.stocks_yes()
         else:
-            return Calculations.stocks_no(self)
+            return self.stocks_no()
