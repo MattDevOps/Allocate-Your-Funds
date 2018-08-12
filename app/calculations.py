@@ -22,6 +22,10 @@ class Calculations():
         user_salary = (self.salary * 0.05)
         return locale.currency(user_salary, grouping=True)
 
+    def three_percent(self):
+        user_salary = (self.salary * 0.03)
+        return locale.currency(user_salary, grouping=True)
+
     #displayed in table header
     def get_age(self):
         return self.age
@@ -40,3 +44,9 @@ class Calculations():
             return self.stocks_yes()
         elif self.risk == 'no':
             return self.stocks_no()
+
+    def get_percent(self):
+        if self.risk == 'yes':
+            return self.three_percent()
+        elif self.risk == 'no':
+            return self.five_percent()
