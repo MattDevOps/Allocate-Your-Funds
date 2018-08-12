@@ -38,5 +38,5 @@ class Calculations():
     def get_risk(self):
         if self.risk == 'yes' or 'Yes':
             return self.stocks_yes()
-        else:
+        elif self.risk == 'no' or 'No':
             return self.stocks_no()
