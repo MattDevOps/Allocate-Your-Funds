@@ -10,8 +10,14 @@
 {% endblock %}
 
 {% block app_content %}
-{% if form.errors %}
-<h3>{{ form.password2.errors}}</h3>
+{% if form.password2.errors %}
+<h4>Passwords do not match - please try again.</h4>
+{% endif %}
+{% if form.risk.errors %}
+<h4>You did not enter yes or no</h4>
+{% endif %}
+{% if form.email.errors %}
+<h4>You did not enter a valid email address</h4>
 {% endif %}
 <div class="container">
   <div class="row offset-md-3">
