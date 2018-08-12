@@ -40,7 +40,7 @@ def register():
         if user:
             register_form.username.errors.append('Username taken')
             return redirect('register')
-            
+
         user = User(username=register_form.username.data.lower(), email=register_form.email.data.lower(),
         age=register_form.age.data, salary=register_form.salary.data, risk=register_form.risk.data.lower())
         calc = Calculations(register_form.age.data, register_form.salary.data, register_form.risk.data)
@@ -68,7 +68,7 @@ def edit_profile():
     if form.validate_on_submit():
         current_user.age = form.age.data
         current_user.salary = form.salary.data
-        current_user.risk = form.risk.data
+        current_user.risk = form.risk.data.lower()
         db.session.commit()
         flash('Your changes have been saved.')
         return redirect(url_for('profile'))
