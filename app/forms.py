@@ -13,7 +13,7 @@ class LoginForm(FlaskForm):
     def check_for_invalid(self, username):
         user = User.query.filter_by(username=username.data).first()
         if user is None:
-            raise ValidationError('That username does exist.')
+            raise ValidationError('That username doesn\'t exist.')
 
 
 class RegistrationForm(FlaskForm):
