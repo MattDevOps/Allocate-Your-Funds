@@ -30,7 +30,7 @@ class RegistrationForm(FlaskForm):
     def validate_age(form, age):
         if isinstance(age.data, int) == False:
             flash('Please enter numbers only as your age')
-            raise ValidationError('Please enter numbers onlfffy')
+            raise ValidationError('Please enter numbers only')
 
     def validate_salary(form, salary):
         if isinstance(salary.data, int) == False:
@@ -58,6 +58,16 @@ class EditProfileForm(FlaskForm):
     password = PasswordField('Password')
     password2 = PasswordField('Confirm Password', validators=[EqualTo('password', message='Passwords must match')])
     submit = SubmitField('Submit')
+
+    def validate_age(form, age):
+        if isinstance(age.data, int) == False:
+            flash('Please enter numbers only as your age')
+            raise ValidationError('Please enter numbers only')
+
+    def validate_salary(form, salary):
+        if isinstance(salary.data, int) == False:
+            flash('Please enter numbers only as your salary')
+            raise ValidationError('Please enter numbers only')
 
     def validate_username(self, username):
         user = User.query.filter_by(username=username.data).first()
