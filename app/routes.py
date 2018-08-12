@@ -77,5 +77,8 @@ def edit_profile():
 @login_required
 @app.route('/results', methods=['GET', 'POST'])
 def results():
-    calc = Calculations(current_user.age, current_user.salary, current_user.risk)
-    return render_template('results.html', calc=calc, title='Results')
+    if current_user.is_authenticated:
+        calc = Calculations(current_user.age, current_user.salary, current_user.risk)
+        return render_template('results.html', calc=calc, title='Results')
+    else:
+        return redirect(url_for('register'))
