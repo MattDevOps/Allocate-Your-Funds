@@ -13,11 +13,14 @@
 {% if form.password2.errors %}
 <p class="alert alert-warning">Passwords do not match - please try again.</p>
 {% endif %}
-{% if form.risk.errors %}
-<p class="alert alert-warning">You did not enter yes or no</p>
-{% endif %}
 {% if form.email.errors %}
 <p class="alert alert-warning">You did not enter a valid email address</p>
+{% endif %}
+{% if form.username.errors %}
+<p class="alert alert-warning">You did not enter a valid username</p>
+{% endif %}
+{% if form.full_name.errors %}
+<p class="alert alert-warning">You did not enter a valid name</p>
 {% endif %}
 <div class="container">
   <div class="row offset-md-3">

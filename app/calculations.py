@@ -36,7 +36,7 @@ class Calculations():
 
     #determines how much we recommend the user invest in stocks
     def get_risk(self):
-        if self.age == 'yes' or 'Yes':
+        if self.risk == 'yes' or 'Yes':
             return Calculations.stocks_yes(self)
         else:
             return Calculations.stocks_no(self)

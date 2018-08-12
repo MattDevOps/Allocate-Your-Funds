@@ -40,9 +40,9 @@ def register():
         if user:
             register_form.username.errors.append('Username taken')
             return redirect('register')
+            
         user = User(username=register_form.username.data.lower(), email=register_form.email.data.lower(),
         age=register_form.age.data, salary=register_form.salary.data, risk=register_form.risk.data.lower())
-
         calc = Calculations(register_form.age.data, register_form.salary.data, register_form.risk.data)
         user.set_password(register_form.password.data)
         db.session.add(user)
