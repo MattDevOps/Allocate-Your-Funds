@@ -1,5 +1,5 @@
 import locale
-locale.setlocale( locale.LC_ALL, '' )
+locale.setlocale( locale.LC_ALL, '' ) # sets salary to USD
 
 class Calculations():
     def __init__(self, age, salary, risk):
@@ -10,12 +10,12 @@ class Calculations():
     #method is called if user is risky
     def stocks_yes(self):
         user_stock = (120 - self.age)
-        return locale.currency(user_stock, grouping=True)
+        return user_stock
 
     #method is called if user is risk averse
     def stocks_no(self):
         user_stock = (98 - self.age)
-        return locale.currency(user_stock, grouping=True)
+        return user_stock
 
     #calculates how much $ the user should hold
     def five_percent(self):

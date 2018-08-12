@@ -168,8 +168,9 @@ label[for=password],  label[for=password2]
   color: white;
 }
 
-footer {
+#footer {
    width:100%;
    z-index: 1;
    margin-top: 140px;
+   position: absolute;
 }
