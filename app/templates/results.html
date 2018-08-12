@@ -15,17 +15,17 @@
           <th>Age: {{ calc.get_age() }}</th>
           <th class="green">Salary: {{ calc.get_salary() }} </th>
           <th class="risk"> Willing to Risk: {{ calc.is_risky().title() }} </th>
-          </tr>
+        </tr>
           <tr>
             <td>Based on your age and risk level, you should invest {{ calc.get_risk() }}% of your portfolio in stocks
-            </td>
-            <td>You should save: {{ calc.five_percent() }} in cash each year with your current salary</td>
+          </td>
+            <td>You should save: {{ calc.five_percent() }} in cash each year with your current salary
+          </td>
           {% endif %}
         </tr>
         </table>
           <img class="center" src="https://raw.githubusercontent.com/mattstermh93/Allocate-Your-Funds/master/app/static/img/10-year-bond.png" alt="Image" width="100%">
           <h5>We don't recommend bonds since the returns on 10 year bond yields has decreased significantly in the last 35 years.</h5>
-
     </div>
   </div>
 </div>
