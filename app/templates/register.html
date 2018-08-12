@@ -11,13 +11,13 @@
 
 {% block app_content %}
 {% if form.password2.errors %}
-<h4>Passwords do not match - please try again.</h4>
+<p class="alert alert-warning">Passwords do not match - please try again.</p>
 {% endif %}
 {% if form.risk.errors %}
-<h4>You did not enter yes or no</h4>
+<p class="alert alert-warning">You did not enter yes or no</p>
 {% endif %}
 {% if form.email.errors %}
-<h4>You did not enter a valid email address</h4>
+<p class="alert alert-warning">You did not enter a valid email address</p>
 {% endif %}
 <div class="container">
   <div class="row offset-md-3">
