@@ -9,3 +9,5 @@ HTML
 CSS
 Python
 jQuery
+
+http://sqliteviewer.flowsoft7.com easily verifies app.db info
