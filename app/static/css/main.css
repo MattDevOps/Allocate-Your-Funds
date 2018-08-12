@@ -1,6 +1,6 @@
 body {
   overflow-x: hidden;
-  font-family: Georgia;
+  font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
   background-image: url("/static/img/wallpaper2you_104128.jpg");
 }
 
@@ -120,7 +120,7 @@ h3>a:hover {
 }
 
 table {
-  border: 4px solid black;
+  border: 4px #343a40!important;;
   width: 50%;
   text-align: center;
   margin: 20px auto;
@@ -128,28 +128,16 @@ table {
 }
 
 table tr th, table tr td {
-  border: 2px solid black;
+  border: 2px solid #343a40!important;;
   padding: 20px;
   display: inline-block;
 }
 
 tr { display: block; }
 
-.green:hover {
-  color: lightgreen;
-}
-
-.risk:hover {
-  color: red;
-}
-
 th {
   color: white;
   font-weight: bold;
-}
-
-th:hover {
-  color: black;
 }
 
 td {
