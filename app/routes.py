@@ -67,9 +67,9 @@ def edit_profile():
     form = EditProfileForm()
     try:
         user = form.risk.data
-        if user:
+        if user.lower:
             if form.validate_on_submit():
-                if user == 'yes' or user =='no':
+                if user.lower() == 'yes' or user =='no':
                     current_user.age = form.age.data
                     current_user.salary = form.salary.data
                     current_user.risk = form.risk.data.lower()
