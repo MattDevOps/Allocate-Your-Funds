@@ -61,15 +61,6 @@ class EditProfileForm(FlaskForm):
     password2 = PasswordField('Confirm Password', validators=[EqualTo('password', message='Passwords must match')])
     submit = SubmitField('Submit')
 
-    # def validate_risk(form, risk):
-    #     user_risk = Calculations(current_user.risk)
-    #     if user_risk == "yes" or user_risk == "no":
-    #         flash('Your changes have been saved.')
-    #         return redirect(url_for('profile'))
-    #     else:
-    #         flash('You did not enter yes or no regarding your risk level')
-    #         raise ValidationError("Please enter yes or no")
-
     #this replaces the need for a jinja2 implementation
     def validate_age(form, age):
         if isinstance(age.data, int) == False:

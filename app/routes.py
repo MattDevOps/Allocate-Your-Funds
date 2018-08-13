@@ -66,8 +66,8 @@ def profile():
 def edit_profile():
     form = EditProfileForm()
     user = form.risk.data
-    if user == 'yes' or user =='no':
-        if form.validate_on_submit():
+    if form.validate_on_submit():
+        if user == 'yes' or user =='no':
             current_user.age = form.age.data
             current_user.salary = form.salary.data
             current_user.risk = form.risk.data.lower()
@@ -78,11 +78,9 @@ def edit_profile():
         flash('You did not enter a valid risk level')
     return render_template('edit_profile.html', title='Edit Profile', form=form)
 
-@login_required
+
 @app.route('/results', methods=['GET', 'POST'])
+@login_required
 def results():
-    if current_user.is_authenticated:
-        calc = Calculations(current_user.age, current_user.salary, current_user.risk)
-        return render_template('results.html', calc=calc, title='Results')
-    else:
-        return redirect(url_for('register'))
+    calc = Calculations(current_user.age, current_user.salary, current_user.risk)
+    return render_template('results.html', calc=calc, title='Results')

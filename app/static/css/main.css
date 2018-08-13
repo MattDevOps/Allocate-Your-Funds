@@ -31,12 +31,6 @@ figcaption {
   border-color: #343a40!important;
 }
 
-footer {
-  background-color: #343a40!important;
-  color: rgba(255,255,255,.5);
-  padding: 15px;
-}
-
 .form-control {
   border-radius: 0px;
 }
@@ -144,8 +138,8 @@ td {
   font-size: 150%;
 }
 
-.steelbluetext {
-  color: steelblue;
+.username-color {
+  color: #343a40!important;;
   font-weight: bold;
 }
 
@@ -156,9 +150,11 @@ label[for=password],  label[for=password2]
   color: white;
 }
 
-#footer {
-   width:100%;
-   z-index: 1;
-   margin-top: 140px;
-   position: absolute;
+footer {
+  width:100%;
+  z-index: 1;
+  margin-top: 50px;
+  background-color: #343a40!important;
+  color: rgba(255,255,255,.5);
+  padding: 15px;
 }
