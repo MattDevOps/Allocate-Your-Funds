@@ -38,7 +38,7 @@ class Calculations():
     def is_risky(self):
         return self.risk
 
-    #determines how much we recommend the user invest in stocks
+    #determines how much we recommend for the user to invest in stocks
     def get_risk(self):
         if self.risk == 'yes':
             return self.stocks_yes()

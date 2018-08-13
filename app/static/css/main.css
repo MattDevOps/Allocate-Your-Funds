@@ -114,20 +114,22 @@ h3>a:hover {
 }
 
 table {
-  border: 4px #343a40!important;;
-  width: 50%;
+  border: 4px #343a40!important;
+  width:100%;
   text-align: center;
   margin: 20px auto;
   border-collapse: collapse;
 }
 
 table tr th, table tr td {
-  border: 2px solid #343a40!important;;
+  border: 3px solid #343a40!important;
   padding: 20px;
   display: inline-block;
 }
 
-tr { display: block; }
+tr {
+  display: block;
+}
 
 th {
   color: white;
@@ -143,6 +145,10 @@ td {
   font-weight: bold;
 }
 
+.navcolor {
+  color: #343a40!important;
+}
+
 label[for=username], label[for=full_name], label[for=age],
 label[for=salary],  label[for=email], label[for=risk],
 label[for=password],  label[for=password2]
@@ -153,7 +159,7 @@ label[for=password],  label[for=password2]
 footer {
   width:100%;
   z-index: 1;
-  margin-top: 50px;
+  margin-top: 150px;
   background-color: #343a40!important;
   color: rgba(255,255,255,.5);
   padding: 15px;
