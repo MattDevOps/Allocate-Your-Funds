@@ -3,6 +3,7 @@ from flask import flash
 from wtforms import StringField, PasswordField, BooleanField, SubmitField, IntegerField
 from wtforms.validators import DataRequired, EqualTo, Email, Length, ValidationError, NumberRange, InputRequired
 from app.models import User
+from app.calculations import Calculations
 
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
@@ -61,11 +62,11 @@ class EditProfileForm(FlaskForm):
     submit = SubmitField('Submit')
 
     # def validate_risk(form, risk):
-    #     user_risk = risk.data.istitle()
-    #     if user_risk != "yes":
-    #         flash('You did not enter yes or no regarding your risk level')
-    #         raise ValidationError("Please enter yes or no")
-    #     elif user_risk != "no":
+    #     user_risk = Calculations(current_user.risk)
+    #     if user_risk == "yes" or user_risk == "no":
+    #         flash('Your changes have been saved.')
+    #         return redirect(url_for('profile'))
+    #     else:
     #         flash('You did not enter yes or no regarding your risk level')
     #         raise ValidationError("Please enter yes or no")
 

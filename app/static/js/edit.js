@@ -1,4 +1,4 @@
-$("#full_name").attr("Placeholder", "*Required");
-$("#risk").attr("Placeholder", "*Required");
-$("#salary").attr("Placeholder", "*Required - numbers only");
-$("#age").attr("Placeholder", "*Required");
+$("#full_name").attr("Placeholder", "*Please enter your name");
+$("#risk").attr("Placeholder", "*Please write yes or no");
+$("#salary").attr("Placeholder", "*Please enter numbers only");
+$("#age").attr("Placeholder", "*Please enter your age");
