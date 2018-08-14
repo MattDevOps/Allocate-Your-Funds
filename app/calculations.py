@@ -9,7 +9,7 @@ class Calculations():
 
     #method is called if user is risky
     def stocks_yes(self):
-        user_stock = (120 - self.age)
+        user_stock = (118 - self.age)
         return user_stock
 
     #method is called if user is risk averse
@@ -17,11 +17,11 @@ class Calculations():
         user_stock = (90 - self.age)
         return user_stock
 
-    #calculates how much $ the user should hold
+    #calculates 5% of the user's salary
     def five_percent(self):
         user_salary = (self.salary * 0.05)
         return locale.currency(user_salary, grouping=True)
-
+    #calculates 3% of the user's salary
     def three_percent(self):
         user_salary = (self.salary * 0.03)
         return locale.currency(user_salary, grouping=True)
@@ -45,6 +45,7 @@ class Calculations():
         elif self.risk == 'no':
             return self.stocks_no()
 
+    #displayed on results page - how much cash the user should hold, based on their risk level
     def get_percent(self):
         if self.risk == 'yes':
             return self.three_percent()
