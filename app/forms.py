@@ -30,12 +30,12 @@ class RegistrationForm(FlaskForm):
 
     def validate_age(form, age):
         if isinstance(age.data, int) == False:
-            flash('Please enter numbers only as your age')
+            flash('You did not enter a valid age')
             raise ValidationError('Please enter numbers only')
 
     def validate_salary(form, salary):
         if isinstance(salary.data, int) == False:
-            flash('Please enter numbers only as your salary')
+            flash('You did not enter a valid salary')
             raise ValidationError('Please enter numbers only')
 
     def validate_username(self, username):
@@ -64,14 +64,14 @@ class EditProfileForm(FlaskForm):
     #this replaces the need for a jinja2 implementation
     def validate_age(form, age):
         if isinstance(age.data, int) == False:
-            flash('Please enter numbers only as your age')
+            flash('You did not enter a valid age')
             raise ValidationError('Please enter numbers only')
 
     #this replaces the need for a jinja2 implementation
     def validate_salary(form, salary):
         if isinstance(salary.data, int) == False:
-            flash('Please enter numbers only as your salary')
-            raise ValidationError('Please enter numbers only')
+            flash('You did not enter a valid salary')
+            raise ValidationError('Invalid salary')
 
     #overwritten in jinja2 on edit_profile.html
     def validate_username(self, username):
