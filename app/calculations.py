@@ -9,12 +9,12 @@ class Calculations():
 
     #method is called if user is risky
     def stocks_yes(self):
-        user_stock = (118 - self.age)
+        user_stock = (100 - self.age)
         return user_stock
 
     #method is called if user is risk averse
     def stocks_no(self):
-        user_stock = (90 - self.age)
+        user_stock = (50 - self.age)
         return user_stock
 
     #calculates 5% of the user's salary
