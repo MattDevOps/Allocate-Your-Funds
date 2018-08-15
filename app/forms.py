@@ -22,11 +22,16 @@ class RegistrationForm(FlaskForm):
     full_name = StringField('Full Name*', validators=[Length(min=1, max=34), DataRequired()])
     age = IntegerField('How old are you?*', validators=[InputRequired(),NumberRange(min=0, max=99999999, message="Input is not a number")])
     salary = IntegerField('What is your yearly salary?', validators=[InputRequired(),NumberRange(min=0, max=99999999, message="Input is not a number")])
-    risk = StringField('Would you consider yourself a risky person?*', validators=[DataRequired(), ])
+    risk = IntegerField('Please enter a risk level from 1-5?*', validators=[DataRequired()])
     email = StringField('Email Address*', validators=[DataRequired(), Email()])
     password = PasswordField('Password*', validators=[DataRequired()])
     password2 = PasswordField('Confirm Password*', validators=[DataRequired(), EqualTo('password', message='Passwords must match')])
     submit = SubmitField('Submit')
+
+    def validate_risk(form, risk):
+        if risk.data > 5:
+            flash('You did not enter a valid risk level')
+            raise ValidationError('Please enter a valid risk level')
 
     def validate_age(form, age):
         if isinstance(age.data, int) == False:
@@ -56,10 +61,15 @@ class EditProfileForm(FlaskForm):
     full_name = StringField('Full Name', validators=[Length(min=1, max=34)])
     age = IntegerField('How old are you?')
     salary = IntegerField('What is your yearly salary?')
-    risk = StringField('Would you consider yourself a risky person?')
+    risk = IntegerField('Please enter a risk level 1-5')
     password = PasswordField('Password')
     password2 = PasswordField('Confirm Password', validators=[EqualTo('password', message='Passwords must match')])
     submit = SubmitField('Submit')
+
+    def validate_risk(form, risk):
+        if risk.data > 5:
+            flash('You did not enter a valid risk level')
+            raise ValidationError('Please enter a valid risk level')
 
     #this replaces the need for a jinja2 implementation
     def validate_age(form, age):

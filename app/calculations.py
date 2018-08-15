@@ -7,23 +7,46 @@ class Calculations():
         self.salary = float(salary)
         self.risk = risk
 
-    #method is called if user is risky
-    def stocks_yes(self):
+    # one of these methods will get  called depending on user's risk level
+    def stocks_5(self):
         user_stock = (100 - self.age)
-        return user_stock
+        return int(user_stock)
 
-    #method is called if user is risk averse
-    def stocks_no(self):
+    def stocks_4(self):
+        user_stock = (90 - self.age)
+        return int(user_stock)
+
+    def stocks_3(self):
+        user_stock = (80 - self.age)
+        return int(user_stock)
+
+    def stocks_2(self):
+        user_stock = (70 - self.age)
+        return int(user_stock)
+
+    def stocks_1(self):
         user_stock = (60 - self.age)
-        return user_stock
+        return int(user_stock)
 
-    #calculates 5% of the user's salary, returns value in cash to hold
-    def five_percent(self):
-        user_salary = (self.salary * 0.05)
+    def one_percent(self):
+        user_salary = (self.salary * 0.01)
         return locale.currency(user_salary, grouping=True)
-    #calculates 3% of the user's salary, returns value in cash to hold
+
+    def two_percent(self):
+        user_salary = (self.salary * 0.02)
+        return locale.currency(user_salary, grouping=True)
+
+    #calculates % of the user's salary, returns value in cash to hold
     def three_percent(self):
         user_salary = (self.salary * 0.03)
+        return locale.currency(user_salary, grouping=True)
+
+    def four_percent(self):
+        user_salary = (self.salary * 0.04)
+        return locale.currency(user_salary, grouping=True)
+
+    def five_percent(self):
+        user_salary = (self.salary * 0.05)
         return locale.currency(user_salary, grouping=True)
 
     #displayed in table header
@@ -40,14 +63,27 @@ class Calculations():
 
     #determines how much we recommend for the user to invest in stocks
     def get_risk(self):
-        if self.risk == 'yes':
-            return self.stocks_yes()
-        elif self.risk == 'no':
-            return self.stocks_no()
+        print(self.risk)
+        if int(self.risk) == 1:
+            return self.stocks_1()
+        elif int(self.risk) == 2:
+            return self.stocks_2()
+        elif int(self.risk) == 3:
+            return self.stocks_3()
+        elif int(self.risk) == 4:
+            return self.stocks_4()
+        elif int(self.risk) == 5:
+            return self.stocks_5()
 
     #displayed on results page - how much cash the user should hold, based on their risk level
     def get_percent(self):
-        if self.risk == 'yes':
+        if int(self.risk) == 1:
+            return self.one_percent()
+        elif int(self.risk) == 2:
+            return self.two_percent()
+        elif int(self.risk) == 3:
             return self.three_percent()
-        elif self.risk == 'no':
+        elif int(self.risk) == 4:
+            return self.four_percent()
+        elif int(self.risk) == 5:
             return self.five_percent()

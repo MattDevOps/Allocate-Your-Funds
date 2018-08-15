@@ -42,7 +42,7 @@ def register():
             return redirect('register')
 
         user = User(username=register_form.username.data.lower(), email=register_form.email.data.lower(),
-        age=register_form.age.data, salary=register_form.salary.data, risk=register_form.risk.data.lower())
+        age=register_form.age.data, salary=register_form.salary.data, risk=register_form.risk.data)
         calc = Calculations(register_form.age.data, register_form.salary.data, register_form.risk.data)
         user.set_password(register_form.password.data)
         db.session.add(user)
@@ -65,21 +65,13 @@ def profile():
 @login_required
 def edit_profile():
     form = EditProfileForm()
-    try:
-        user = form.risk.data
-        if user.lower:
-            if form.validate_on_submit():
-                if user.lower() == 'yes' or user =='no':
-                    current_user.age = form.age.data
-                    current_user.salary = form.salary.data
-                    current_user.risk = form.risk.data.lower()
-                    db.session.commit()
-                    flash('Your changes have been saved.')
-                    return redirect(url_for('profile'))
-            else:
-                flash('You did not enter a valid risk level')
-    except:
-        pass
+    if form.validate_on_submit():
+        current_user.age = form.age.data
+        current_user.salary = form.salary.data
+        current_user.risk = form.risk.data
+        db.session.commit()
+        flash('Your changes have been saved.')
+        return redirect(url_for('profile'))
     return render_template('edit_profile.html', title='Edit Profile', form=form)
 
 
