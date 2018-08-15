@@ -17,11 +17,11 @@ class Calculations():
         user_stock = (50 - self.age)
         return user_stock
 
-    #calculates 5% of the user's salary
+    #calculates 5% of the user's salary, returns value in cash to hold
     def five_percent(self):
         user_salary = (self.salary * 0.05)
         return locale.currency(user_salary, grouping=True)
-    #calculates 3% of the user's salary
+    #calculates 3% of the user's salary, returns value in cash to hold
     def three_percent(self):
         user_salary = (self.salary * 0.03)
         return locale.currency(user_salary, grouping=True)
