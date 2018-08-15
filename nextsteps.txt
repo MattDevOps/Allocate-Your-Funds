@@ -1,0 +1,5 @@
+Move DB to postgreSQL
+Add token to emails for users to verify (timed)
+Create a forgot password
+Host on Heroku
+Possibly add additional calculations, add another risk level, etc.

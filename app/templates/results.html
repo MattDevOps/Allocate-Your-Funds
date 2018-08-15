@@ -16,17 +16,15 @@
           <th class="risk"> Willing to Risk: {{ calc.is_risky().title() }} </th>
         </tr>
           <tr>
-            <td>Based on your age and risk level, you should invest {{ calc.get_risk() }}% of your portfolio in stocks
-          </td>
-            <td>You should save: {{ calc.get_percent() }} in cash each year with your current salary
-          </td>
+            <td>Based on your age and risk level, you should invest {{ calc.get_risk() }}% of your portfolio in stocks</td>
+            <td>You should save: {{ calc.get_percent() }} in cash each year with your current salary</td>
           {% endif %}
-        </tr>
+          </tr>
         </table>
           <img class="center" src="https://raw.githubusercontent.com/mattstermh93/Allocate-Your-Funds/master/app/static/img/10-year-bond.png" alt="Image" width="100%">
           <ul>
           <h5 class="offset-md-1">Why we do not recommend bonds:</h5>
-            <li>The returns on 10 year bond yields has decreased significantly in the last 35 years.</li>
+          <li>The returns on 10 year bond yields has decreased significantly in the last 35 years.</li>
           <li>Over the long term, stocks do better than bonds. </li>
           <li>Since 1926, large stocks have returned an average of 10% per year, whereas long-term government bonds have returned between 5% and 6%.</li>
         </ul>
