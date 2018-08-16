@@ -46,7 +46,6 @@ netifaces==0.10.4
 oauthlib==1.0.3
 oneconf==0.3.9
 PAM==0.4.2
-paramiko==1.16.0
 pexpect==4.0.1
 Pillow==3.1.2
 piston-mini-client==0.7.5
@@ -55,7 +54,6 @@ protobuf==2.6.1
 ptyprocess==0.5
 pyasn1==0.1.9
 pyasn1-modules==0.0.7
-pycrypto==2.6.1
 pycups==1.9.73
 pycurl==7.43.0
 Pygments==2.2.0
