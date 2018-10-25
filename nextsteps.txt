@@ -4,6 +4,6 @@ Add token to emails for users to verify (timed)
 
 Create a forgot password
 
-Host on Heroku 
+Host on Heroku
 
-Possibly add additional calculations, add another risk level, etc.
+Possibly add additional calculations, add another risk level
