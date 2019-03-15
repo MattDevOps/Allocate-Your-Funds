@@ -15,20 +15,20 @@ def index():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
-        return redirect(url_for('index'))
+        return redirect(url_for('index')) # sends user back to home if signed in
     login_form = LoginForm()
     if login_form.validate_on_submit():
         user = User.query.filter_by(username=login_form.username.data).first()
         if user is None or not user.check_password(login_form.password.data):
             flash('Invalid login credentials')
-            return redirect(url_for('login'))
+            return redirect(url_for('login')) # user is returned to login page if their login info is not stored in the db
         login_user(user, remember=login_form.remember_me.data)
         next_page = request.args.get('next')
         if not next_page or url_parse(next_page).netloc != '':
-            next_page = url_for('results')
+            next_page = url_for('results') # user gets to see results page if they successfully signed in
         flash('Thanks for logging in {}!'.format(current_user.username))
-        return redirect(next_page)
-    return render_template('login.html', form=login_form)
+        return redirect(next_page) # Flashed message appears, and user is directed to next page
+    return render_template('login.html', form=login_form) # if none of the above conditions are met, the user returns to the login page
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -40,7 +40,7 @@ def register():
         if user:
             register_form.username.errors.append('Username taken')
             return redirect('register')
-
+        # the code below stores the user info in the db
         user = User(username=register_form.username.data.lower(), email=register_form.email.data.lower(),
         age=register_form.age.data, salary=register_form.salary.data, risk=register_form.risk.data)
         calc = Calculations(register_form.age.data, register_form.salary.data, register_form.risk.data)
@@ -66,9 +66,9 @@ def profile():
 def edit_profile():
     form = EditProfileForm()
     if form.validate_on_submit():
-        current_user.age = form.age.data
-        current_user.salary = form.salary.data
-        current_user.risk = form.risk.data
+        current_user.age = form.age.data # updates old age value to new one
+        current_user.salary = form.salary.data # updates old salary value to new one
+        current_user.risk = form.risk.data # updates old risk value to new one
         db.session.commit()
         flash('Your changes have been saved.')
         return redirect(url_for('profile'))
@@ -78,5 +78,5 @@ def edit_profile():
 @app.route('/results', methods=['GET', 'POST'])
 @login_required
 def results():
-    calc = Calculations(current_user.age, current_user.salary, current_user.risk)
+    calc = Calculations(current_user.age, current_user.salary, current_user.risk) # gets the user age, salary and risk and displays it on the results page
     return render_template('results.html', calc=calc, title='Results')

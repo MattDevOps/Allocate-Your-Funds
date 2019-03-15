@@ -7,7 +7,7 @@ class Calculations():
         self.salary = float(salary)
         self.risk = risk
 
-    # one of these methods will get  called depending on user's risk level
+    # one of these methods will get called depending on user's risk level
     def stocks_5(self):
         user_stock = (100 - self.age)
         return int(user_stock)
