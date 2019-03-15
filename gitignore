@@ -7,4 +7,6 @@
 */venv/
 *\venv
 *.pynb
-*test
+*tests/
+.*tests/
+.tests/
