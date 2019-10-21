@@ -18,7 +18,7 @@ defer==1.0.6
 dirspec==13.10
 dominate==2.3.1
 duplicity==0.7.6
-ecdsa==0.13
+ecdsa==0.13.3
 enum34==1.1.2
 ez-setup==0.9
 f.lux-indicator-applet==1.1.11rc0
