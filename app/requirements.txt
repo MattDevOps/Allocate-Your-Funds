@@ -36,7 +36,7 @@ httplib2==0.9.1
 idna==2.7
 ipaddress==1.0.16
 itsdangerous==0.24
-Jinja2==2.10
+Jinja2==2.11.3
 lockfile==0.12.2
 lxml==3.5.0
 Mako==1.0.7
