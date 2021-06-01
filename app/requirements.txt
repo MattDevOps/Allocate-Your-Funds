@@ -79,7 +79,7 @@ setproctitle==1.1.8
 six==1.11.0
 SQLAlchemy==1.2.10
 Twisted==16.0.0
-urllib3==1.23
+urllib3==1.26.5
 uTidylib==0.2
 virtualenv==16.0.0
 visitor==0.1.3
