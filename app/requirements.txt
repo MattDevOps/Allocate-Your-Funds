@@ -38,7 +38,7 @@ ipaddress==1.0.16
 itsdangerous==0.24
 Jinja2==2.10
 lockfile==0.12.2
-lxml==3.5.0
+lxml==4.6.5
 Mako==1.0.7
 MarkupSafe==1.0
 nemo-emblems==3.6.0
