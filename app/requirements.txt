@@ -51,7 +51,7 @@ pexpect==4.0.1
 Pillow==3.1.2
 piston-mini-client==0.7.5
 prompt-toolkit==1.0.15
-protobuf==2.6.1
+protobuf==3.15.0
 ptyprocess==0.5
 pyasn1==0.1.9
 pyasn1-modules==0.0.7
