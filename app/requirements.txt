@@ -78,7 +78,7 @@ service-identity==16.0.0
 setproctitle==1.1.8
 six==1.11.0
 SQLAlchemy==1.2.10
-Twisted==16.0.0
+Twisted==22.4.0
 urllib3==1.23
 uTidylib==0.2
 virtualenv==16.0.0
