@@ -39,7 +39,7 @@ itsdangerous==0.24
 Jinja2==2.10
 lockfile==0.12.2
 lxml==3.5.0
-Mako==1.0.7
+Mako==1.2.2
 MarkupSafe==1.0
 nemo-emblems==3.6.0
 netifaces==0.10.4
